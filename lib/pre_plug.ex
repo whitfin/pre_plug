@@ -46,6 +46,19 @@ defmodule PrePlug do
   end
 
   @doc """
+  A macro which ensures PrePlug is loaded into the current module.
+
+  If PrePlug has already been included via `use`, this will do nothing.
+  """
+  defmacro ensure_loaded do
+    quote do
+      unless Module.get_attribute(__MODULE__, :pre_plugs) do
+        use PrePlug
+      end
+    end
+  end
+
+  @doc """
   A macro that stores a new pre-plug. `opts` will be passed unchanged to the new
   plug.
 
