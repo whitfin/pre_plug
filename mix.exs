@@ -23,9 +23,9 @@ defmodule PrePlug.Mixfile do
         },
         maintainers: [ "Isaac Whitfield" ]
       },
-      version: "1.0.0",
+      version: "1.0.1",
       elixir: "~> 1.2",
-      deps: deps,
+      deps: deps(),
       docs: [
         extras: [ "README.md" ],
         source_ref: "master",
