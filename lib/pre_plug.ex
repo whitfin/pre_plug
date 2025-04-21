@@ -28,7 +28,7 @@ defmodule PrePlug do
   @doc false
   defmacro __before_compile__(env) do
     # parse out any builder options
-    pre_plugs    = Module.get_attribute(env.module, :pre_plugs)
+    pre_plugs = Module.get_attribute(env.module, :pre_plugs)
     builder_opts = Module.get_attribute(env.module, :plug_builder_opts)
 
     # compile the pre plugs using the Plug Builder
@@ -36,7 +36,7 @@ defmodule PrePlug do
 
     # override call to execute first
     quote location: :keep do
-      defoverridable [call: 2]
+      defoverridable call: 2
 
       # pipe the pre-conn to the super function
       def call(unquote(conn), opts) do
@@ -76,5 +76,4 @@ defmodule PrePlug do
       @pre_plugs {unquote(plug), unquote(opts), true}
     end
   end
-
 end

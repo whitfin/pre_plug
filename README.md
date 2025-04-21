@@ -6,21 +6,21 @@ By default, if you're using an error handler and an error is thrown inside Plug,
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
-  1. Add `pre_plug` to your list of dependencies in `mix.exs`:
+Add `pre_plug` to your list of dependencies in `mix.exs`:
 
-    ```elixir
-    def deps do
-      [{:pre_plug, "~> 1.0"}]
-    end
-    ```
+```elixir
+def deps do
+  [{:pre_plug, "~> 1.0"}]
+end
+```
 
-  2. Ensure `pre_plug` is started before your application:
+Ensure `pre_plug` is started before your application:
 
-    ```elixir
-    def application do
-      [applications: [:pre_plug]]
-    end
-    ```
+```elixir
+def application do
+  [applications: [:pre_plug]]
+end
+```
 
 ## Usage
 
